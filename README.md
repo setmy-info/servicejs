@@ -10,6 +10,10 @@ npm run start
 
 or
 
+npm start
+
+or
+
 mvn jetty:run
 
 http://localhost:3000/
