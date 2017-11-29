@@ -1,7 +1,7 @@
 jsdi.service("serviceA", function () {
 
     var serviceA = {
-        inject: ['serviceB']
+        serviceB: null
     };
 
     serviceA.init = function () {
