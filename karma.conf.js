@@ -13,7 +13,7 @@ module.exports = function (config) {
             // service finalization
             'src/main/webapp/js/finalize.js',
             // tests
-            'src/test/js/unit/**/*.js'
+            'src/test/js/unit/**/*.spec.js'
         ],
         autoWatch: true,
         colors: true,
@@ -24,7 +24,7 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
         browsers: [/*'Chrome',*/'PhantomJS'],
         preprocessors: {
-            'unit/*.spec.js': ['coverage']
+            'src/main/webapp/js/*.js': ['coverage']
         },
         htmlReporter: {
             outputDir: 'target/html'
