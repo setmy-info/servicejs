@@ -28,6 +28,10 @@ mvn jetty:run
 
 http://localhost:3000/
 
+### Unit testing
+
+npm run unit
+
 ### Publishing npm
 
 https://docs.npmjs.com/getting-started/publishing-npm-packages

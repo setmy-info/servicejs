@@ -69,10 +69,10 @@ jsdi.resolveServiceDependencies = function (serviceObject) {
     }
 };
 
+jsdi.getObject = function (obj) {
+    return JSON.parse(JSON.stringify(obj));
+};
+
 function getService(serviceName) {
     return jsdi.services[serviceName];
-}
-
-function getObject(obj) {
-    return JSON.parse(JSON.stringify(obj));
 }
