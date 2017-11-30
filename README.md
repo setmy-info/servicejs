@@ -35,3 +35,9 @@ npm run unit
 ### Publishing npm
 
 https://docs.npmjs.com/getting-started/publishing-npm-packages
+
+### Bower registration
+
+https://bower.io/docs/creating-packages/
+
+bower register servicejs https://github.com/Krabi/servicejs.git
