@@ -1,4 +1,4 @@
-/* !
+/*
  MIT License
  
  Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
@@ -55,16 +55,27 @@ jsdi.resolveDependencies = function () {
     var serviceObject, serviceObjectPropertyName;
     for (serviceObjectPropertyName in jsdi.services) {
         serviceObject = jsdi.services[serviceObjectPropertyName];
-        jsdi.resolveServiceDependencies(serviceObject);
+        jsdi.resolveServiceDependenciesFromList(serviceObject);
+        jsdi.resolveServiceDependenciesFromObject(serviceObject);
     }
 };
 
-jsdi.resolveServiceDependencies = function (serviceObject) {
+jsdi.resolveServiceDependenciesFromList = function (serviceObject) {
     if (serviceObject.inject) {
         var depNamePosition, serviceName;
         for (depNamePosition in serviceObject.inject) {
             serviceName = serviceObject.inject[depNamePosition];
             serviceObject[serviceName] = jsdi.services[serviceName];
+        }
+    }
+};
+
+jsdi.resolveServiceDependenciesFromObject = function (serviceObject) {
+    var propertyName, property;
+    for (propertyName in serviceObject) {
+        property = serviceObject[propertyName];
+        if (property === null) {
+            serviceObject[propertyName] = jsdi.services[propertyName];
         }
     }
 };
