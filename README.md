@@ -38,6 +38,8 @@ https://docs.npmjs.com/getting-started/publishing-npm-packages
 
 ### Bower registration
 
+nano bower.json
+
 https://bower.io/docs/creating-packages/
 
 bower register servicejs https://github.com/Krabi/servicejs.git
