@@ -1,6 +1,6 @@
 {
   "name": "servicejs",
-  "version": "1.0.12",
+  "version": "1.0.13-SNAPSHOT",
   "description": "JavaScript dependencies injection based services layer.",
   "main": "src/index.js",
   "scripts": {

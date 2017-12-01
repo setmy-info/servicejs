@@ -5,7 +5,7 @@ module.exports = function (config) {
         basePath: './',
         files: [
             // main library
-            'src/main/webapp/js/servicejs.js',
+            'src/main/webapp/js/servicejs.min.js',
             // TESTABLE ITEMS - examples and test services
             'src/main/webapp/js/serviceA.js',
             'src/main/webapp/js/serviceB.js',
