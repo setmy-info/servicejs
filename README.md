@@ -32,6 +32,17 @@ http://localhost:3000/
 
 npm run unit
 
+### Run example program
+
+npm run program
+
+### Example code
+
+src/main/webapp/js/serviceA.js
+src/main/webapp/js/serviceB.js
+src/main/webapp/js/serviceC.js
+src/main/webapp/js/finalize.js
+
 ### Publishing npm
 
 https://docs.npmjs.com/getting-started/publishing-npm-packages

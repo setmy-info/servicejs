@@ -1,5 +1,4 @@
 
-//npm install -g karma karma-chrome-launcher karma-firefox-launcher karma-phantomjs-launcher karma-jasmine karma-junit-reporter karma-coverage karma-html-reporter
 module.exports = function (config) {
     config.set({
         basePath: './',

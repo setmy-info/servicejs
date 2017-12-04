@@ -26,11 +26,9 @@
  */
 "use strict";
 
-var jsdi = (function () {
+var jsdi = (function (jsdi) {
 
-    var jsdi = {
-        services: {
-        }
+    jsdi.services = {
     };
 
     jsdi.service = function (serviceName, serviceObject) {
@@ -88,7 +86,7 @@ var jsdi = (function () {
     };
 
     return jsdi;
-}());
+}(typeof exports === 'undefined' ? {} : exports));
 
 function getService(serviceName) {
     return jsdi.services[serviceName];
