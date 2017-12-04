@@ -24,6 +24,7 @@
  https://github.com/Krabi/servicejs
  
  */
+"use strict";
 
 var jsdi = {
     services: {
