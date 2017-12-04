@@ -26,64 +26,69 @@
  */
 "use strict";
 
-var jsdi = {
-    services: {
-    }
-};
+var jsdi = (function () {
 
-jsdi.service = function (serviceName, serviceObject) {
-    var instance;
-    if (typeof serviceObject === 'function') {
-        instance = serviceObject();
-    } else {
-        instance = serviceObject;
-    }
-    jsdi.services[serviceName] = instance;
-};
-
-jsdi.initServices = function () {//TODO : find some better solution, if any.
-    jsdi.resolveDependencies();
-    var serviceObject, serviceObjectPropertyName;
-    for (serviceObjectPropertyName in jsdi.services) {
-        serviceObject = jsdi.services[serviceObjectPropertyName];
-        if (serviceObject.init) {
-            serviceObject.init();
+    var jsdi = {
+        services: {
         }
-    }
-};
+    };
 
-jsdi.resolveDependencies = function () {
-    var serviceObject, serviceObjectPropertyName;
-    for (serviceObjectPropertyName in jsdi.services) {
-        serviceObject = jsdi.services[serviceObjectPropertyName];
-        jsdi.resolveServiceDependenciesFromList(serviceObject);
-        jsdi.resolveServiceDependenciesFromObject(serviceObject);
-    }
-};
-
-jsdi.resolveServiceDependenciesFromList = function (serviceObject) {
-    if (serviceObject.inject) {
-        var depNamePosition, serviceName;
-        for (depNamePosition in serviceObject.inject) {
-            serviceName = serviceObject.inject[depNamePosition];
-            serviceObject[serviceName] = jsdi.services[serviceName];
+    jsdi.service = function (serviceName, serviceObject) {
+        var instance;
+        if (typeof serviceObject === 'function') {
+            instance = serviceObject();
+        } else {
+            instance = serviceObject;
         }
-    }
-};
+        jsdi.services[serviceName] = instance;
+    };
 
-jsdi.resolveServiceDependenciesFromObject = function (serviceObject) {
-    var propertyName, property;
-    for (propertyName in serviceObject) {
-        property = serviceObject[propertyName];
-        if (property === null) {
-            serviceObject[propertyName] = jsdi.services[propertyName];
+    jsdi.initServices = function () {//TODO : find some better solution, if any.
+        jsdi.resolveDependencies();
+        var serviceObject, serviceObjectPropertyName;
+        for (serviceObjectPropertyName in jsdi.services) {
+            serviceObject = jsdi.services[serviceObjectPropertyName];
+            if (serviceObject.init) {
+                serviceObject.init();
+            }
         }
-    }
-};
+    };
 
-jsdi.getObject = function (obj) {
-    return JSON.parse(JSON.stringify(obj));
-};
+    jsdi.resolveDependencies = function () {
+        var serviceObject, serviceObjectPropertyName;
+        for (serviceObjectPropertyName in jsdi.services) {
+            serviceObject = jsdi.services[serviceObjectPropertyName];
+            jsdi.resolveServiceDependenciesFromList(serviceObject);
+            jsdi.resolveServiceDependenciesFromObject(serviceObject);
+        }
+    };
+
+    jsdi.resolveServiceDependenciesFromList = function (serviceObject) {
+        if (serviceObject.inject) {
+            var depNamePosition, serviceName;
+            for (depNamePosition in serviceObject.inject) {
+                serviceName = serviceObject.inject[depNamePosition];
+                serviceObject[serviceName] = jsdi.services[serviceName];
+            }
+        }
+    };
+
+    jsdi.resolveServiceDependenciesFromObject = function (serviceObject) {
+        var propertyName, property;
+        for (propertyName in serviceObject) {
+            property = serviceObject[propertyName];
+            if (property === null) {
+                serviceObject[propertyName] = jsdi.services[propertyName];
+            }
+        }
+    };
+
+    jsdi.getObject = function (obj) {
+        return JSON.parse(JSON.stringify(obj));
+    };
+
+    return jsdi;
+}());
 
 function getService(serviceName) {
     return jsdi.services[serviceName];
