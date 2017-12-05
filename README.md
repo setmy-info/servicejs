@@ -54,3 +54,7 @@ nano bower.json
 https://bower.io/docs/creating-packages/
 
 bower register servicejs https://github.com/Krabi/servicejs.git
+
+### Release
+
+git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && npm publish
