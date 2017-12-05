@@ -72,6 +72,11 @@ bower register servicejs https://github.com/Krabi/servicejs.git
 
 ### Release current project
 
+Simply:
+
+    release.sh
+or
+
 git checkout develop
 
 Remove -SNAPSHOT from pom.xml and package.json and commit change
