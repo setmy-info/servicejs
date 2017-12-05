@@ -76,6 +76,10 @@ git checkout develop
 
 Remove -SNAPSHOT from pom.xml and package.json and commit change
 
+git add pom.xml package.json
+
+git commit -m 'version-X.Y.Z'
+
 git checkout master
 
 git merge develop
