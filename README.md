@@ -80,6 +80,8 @@ git add pom.xml package.json
 
 git commit -m 'version-X.Y.Z'
 
+git push
+
 git checkout master
 
 git merge develop
