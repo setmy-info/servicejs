@@ -16,6 +16,12 @@ You can call code from any browser console, without installing any additional to
 
 npm install
 
+or
+
+bower install
+
+### Run server for examples
+
 npm run start
 
 or
@@ -36,6 +42,15 @@ npm run unit
 
 npm run program
 
+### Usage
+
+    Take a look:
+    <script src="js/servicejs.min.js"></script>
+    <script src="js/serviceA.js"></script>
+    <script src="js/serviceB.js"></script>
+    <script src="js/serviceC.js"></script>
+    <script src="js/finalize.js"></script>
+
 ### Example code
 
 src/main/webapp/js/serviceA.js
@@ -55,10 +70,26 @@ https://bower.io/docs/creating-packages/
 
 bower register servicejs https://github.com/Krabi/servicejs.git
 
-### Release
+### Release current project
 
 git checkout develop
+
 Remove -SNAPSHOT from pom.xml and package.json and commit change
+
 git checkout master
+
 git merge develop
+
 git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && git push && npm publish
+
+### Github site
+
+https://krabi.github.io/servicejs/
+
+### NPM stie
+
+https://www.npmjs.com/package/servicejs
+
+### License
+
+MIT
