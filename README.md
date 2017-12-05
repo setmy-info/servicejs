@@ -57,4 +57,8 @@ bower register servicejs https://github.com/Krabi/servicejs.git
 
 ### Release
 
-git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && npm publish
+git checkout develop
+Remove -SNAPSHOT from pom.xml and package.json and commit change
+git checkout master
+git merge develop
+git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && npm publish && git push
