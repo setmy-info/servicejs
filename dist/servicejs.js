@@ -87,7 +87,3 @@ var jsdi = (function (jsdi) {
 
     return jsdi;
 }(typeof exports === 'undefined' ? {} : exports));
-
-function getService(serviceName) {
-    return jsdi.services[serviceName];
-}
