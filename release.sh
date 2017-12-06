@@ -3,7 +3,7 @@
 # MIT License
 # Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
 
-RELEASE=1.0.23-SNAPSHOT
+RELEASE=1.0.23
 VERSION_TAG=version-${RELEASE}
 
 git add pom.xml package.json release.sh
