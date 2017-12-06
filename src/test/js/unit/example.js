@@ -1,6 +1,6 @@
 "use strict";
 
-var jsdi = require('../../../main/webapp/js/servicejs.js');
+var jsdi = require('../../../main/webapp/js/servicejs');
 
 jsdi.service("serviceA", function () {
 
