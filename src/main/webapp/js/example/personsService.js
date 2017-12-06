@@ -1,7 +1,8 @@
 jsdi.service("personsService", function () {
 
     var personsService = {
-        rolesService: null
+        rolesService: null,
+        queryService: null
     };
 
     personsService.init = function () {
@@ -10,20 +11,21 @@ jsdi.service("personsService", function () {
 
     personsService.person = null;
 
+    personsService.URL = "json/person.json";
+
     personsService.loadPerson = function (callback) {
         var that = this;
-        setTimeout(function () {
-            if (personsService.person) {
-                callback(person);
-            }
-            personsService.person = {
-                name: "Imre"
-            };
-            that.rolesService.getPersonRole(personsService.person.name, function (role) {
-                personsService.person.role = role;
+        if (this.person) {
+            callback(this.person);
+            return;
+        }
+        this.queryService.get(this.URL, function (person) {
+            that.person = person;
+            that.rolesService.getPersonRole(that.person.name, function (role) {
+                that.person.role = role;
                 callback(personsService.person);
             });
-        }, 3000);
+        });
     };
 
     return personsService;
