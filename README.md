@@ -79,9 +79,9 @@ or
 
 git checkout develop
 
-Remove -SNAPSHOT from pom.xml and package.json and commit change
+Remove -SNAPSHOT from pom.xml, package.json and release.sh and commit change
 
-git add pom.xml package.json
+git add pom.xml package.json release.sh
 
 git commit -m 'version-X.Y.Z'
 
