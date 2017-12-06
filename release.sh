@@ -3,11 +3,11 @@
 # MIT License
 # Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
 
-RELEASE=1.0.23
+RELEASE=1.0.24
 VERSION_TAG=version-${RELEASE}
 
 git add pom.xml package.json release.sh
-git commit -m '${VERSION_TAG}'
+git commit -m "${VERSION_TAG}"
 git push
 git checkout master
 git merge develop
