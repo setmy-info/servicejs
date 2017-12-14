@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node ./src/main/js/www",
-    "unit": "karma start karma.conf.js",
+    "unit": "karma start karma.conf.js --single-run",
     "build": "node ./src/main/js/build.js",
     "program": "node ./src/test/js/unit/example"
   },
