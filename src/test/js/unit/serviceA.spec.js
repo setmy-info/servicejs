@@ -5,7 +5,7 @@ describe('serviceA', function () {
     var serviceA;
 
     beforeEach(function () {
-        serviceA = jsdi.services.serviceA;
+        serviceA = jsdi.get().serviceA;
     });
 
     it('should be created for testing', function () {

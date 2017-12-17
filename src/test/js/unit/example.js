@@ -60,6 +60,4 @@ jsdi.service("serviceC", function () {
     return serviceC;
 });
 
-jsdi.initServices();
-
-console.log(jsdi.services.serviceA.getText());
+console.log(jsdi.get().serviceA.getText());

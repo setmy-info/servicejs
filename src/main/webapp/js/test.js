@@ -1,4 +1,4 @@
 function onBodyLoad() {
-    var element = jsdi.services.serviceA.getElement('output');
-    element.innerHTML = jsdi.services.serviceA.getText();
+    var element = jsdi.get().serviceA.getElement('output');
+    element.innerHTML = jsdi.get('serviceA').getText();
 }

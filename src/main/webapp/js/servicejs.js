@@ -28,6 +28,8 @@
 
 var jsdi = (function (jsdi) {
 
+    var isInitialized = false;
+
     jsdi.services = {
     };
 
@@ -50,6 +52,7 @@ var jsdi = (function (jsdi) {
                 serviceObject.init();
             }
         }
+        isInitialized = true;
     };
 
     jsdi.resolveDependencies = function () {
@@ -83,6 +86,16 @@ var jsdi = (function (jsdi) {
 
     jsdi.getObject = function (obj) {
         return JSON.parse(JSON.stringify(obj));
+    };
+
+    jsdi.get = function (serviceName) {
+        if (!isInitialized) {
+            this.initServices();
+        }
+        if (serviceName) {
+            return this.services[serviceName];
+        }
+        return this.services;
     };
 
     return jsdi;
