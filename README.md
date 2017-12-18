@@ -49,14 +49,12 @@ npm run program
     <script src="js/serviceA.js"></script>
     <script src="js/serviceB.js"></script>
     <script src="js/serviceC.js"></script>
-    <script src="js/finalize.js"></script>
 
 ### Example code
 
 src/main/webapp/js/serviceA.js
 src/main/webapp/js/serviceB.js
 src/main/webapp/js/serviceC.js
-src/main/webapp/js/finalize.js
 
 ### Publishing npm
 
