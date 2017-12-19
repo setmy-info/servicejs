@@ -88,14 +88,19 @@ var jsdi = (function (jsdi) {
         return JSON.parse(JSON.stringify(obj));
     };
 
-    jsdi.get = function (serviceName) {
-        if (!isInitialized) {
-            this.initServices();
-        }
+    var getReplacement = function (serviceName) {
         if (serviceName) {
             return this.services[serviceName];
         }
         return this.services;
+    };
+
+    jsdi.get = function (serviceName) {
+        if (!isInitialized) {
+            this.initServices();
+        }
+        jsdi.get = getReplacement;
+        return jsdi.get(serviceName);
     };
 
     return jsdi;
