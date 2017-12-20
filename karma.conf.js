@@ -11,7 +11,6 @@ module.exports = function (config) {
             'src/main/webapp/js/serviceB.js',
             'src/main/webapp/js/serviceC.js',
             // service finalization
-            'src/main/webapp/js/finalize.js',
             // tests
             'src/test/js/unit/**/*.spec.js'
         ],
