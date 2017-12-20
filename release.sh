@@ -3,10 +3,11 @@
 # MIT License
 # Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
 
-RELEASE=1.0.28
+RELEASE=1.0.29
 VERSION_TAG=version-${RELEASE}
 
-git add pom.xml package.json release.sh
+npm install && npm run build && npm run unit
+git add pom.xml package.json release.sh package-lock.json
 git commit -m "${VERSION_TAG}"
 git push
 git checkout master
