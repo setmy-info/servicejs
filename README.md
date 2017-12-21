@@ -44,7 +44,7 @@ npm run program
 
 ### Usage
 
-    Take a look:
+    Import into html as:
     <script src="js/servicejs.min.js"></script>
     <script src="js/serviceA.js"></script>
     <script src="js/serviceB.js"></script>
@@ -70,26 +70,7 @@ bower register servicejs https://github.com/Krabi/servicejs.git
 
 ### Release current project
 
-Simply:
-
     release.sh
-or
-
-git checkout develop
-
-Remove -SNAPSHOT from pom.xml, package.json and release.sh and commit change
-
-git add pom.xml package.json release.sh
-
-git commit -m 'version-X.Y.Z'
-
-git push
-
-git checkout master
-
-git merge develop
-
-git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && git push && npm publish
 
 ### Github site
 
