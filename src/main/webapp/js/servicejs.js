@@ -41,14 +41,17 @@ var jsdi = (function (jsdi) {
             instance = serviceObject;
         }
         jsdi.services[serviceName] = instance;
+        /*if (isInitialized) {//Still adding some services after main initialization need to resolve deps again for all!
+            jsdi.initServices();
+        }*/
     };
 
-    jsdi.initServices = function () {//TODO : find some better solution, if any.
+    jsdi.initServices = function () {
         jsdi.resolveDependencies();
         var serviceObject, serviceObjectPropertyName;
         for (serviceObjectPropertyName in jsdi.services) {
             serviceObject = jsdi.services[serviceObjectPropertyName];
-            if (serviceObject.init) {
+            if (/*!isInitialized && */serviceObject.init) {
                 serviceObject.init();
             }
         }
