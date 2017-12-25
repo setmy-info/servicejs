@@ -43,7 +43,7 @@ var jsdi = (function (jsdi) {
         jsdi.services[serviceName] = instance;
     };
 
-    jsdi.initServices = function () {//TODO : find some better solution, if any.
+    jsdi.initServices = function () {
         jsdi.resolveDependencies();
         var serviceObject, serviceObjectPropertyName;
         for (serviceObjectPropertyName in jsdi.services) {
