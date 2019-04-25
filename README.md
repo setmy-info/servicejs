@@ -1,6 +1,34 @@
+
 ## ServiceJS
 
 This is independent (from other frameworks like: Angular, VueJS, React, etc) and simplest as possible dependencies injection for writing services layer for front end web based projects.
+
+1. Build should build two files:
+    a) servicesjs.js (not minified)
+    b) servicesjs.min.js (minified)
+
+2. And that one file should be usable in:
+    a) web application, old way: <script src="servicesjs.js"></script>
+        to hold development without dependencies - only editor and browser are needed to start development
+    b) node applications adding as module
+        to make development same way as in old browsers
+    c) webpack, if possible.
+
+3. serviceB injections should work as:
+    var serviceA = {
+        serviceB: null
+    };
+
+    or
+
+    var serviceA = {
+        inject: ['serviceB']
+    };
+
+4. Services should be usable without changes in browser and in node - hold similarity.
+   No need to do context switching in mind and learn something else, when making development in web or node.
+
+5. Base common services are going to another library: servedjs
 
 ### Why?
 
@@ -28,19 +56,9 @@ or
 
 npm start
 
-or
-
-mvn jetty:run
-
-http://localhost:3000/
-
-### Unit testing
-
-npm run unit
-
 ### Run example program
 
-npm run program
+npm run test
 
 ### Usage
 
@@ -52,21 +70,21 @@ npm run program
 
 ### Example code
 
-src/main/webapp/js/serviceA.js
-src/main/webapp/js/serviceB.js
-src/main/webapp/js/serviceC.js
+src/frontend/public/js/serviceA.js
+src/frontend/public/js/serviceB.js
+src/frontend/public/js/serviceC.js
+
+src/frontend/public/js/example/logicService.js
+src/frontend/public/js/example/personsService.js
+src/frontend/public/js/example/queryService.js
+src/frontend/public/js/example/rolesService.js
+
+src/frontend/public/node/index.js
+src/frontend/public/node/main.js
 
 ### Publishing npm
 
 https://docs.npmjs.com/getting-started/publishing-npm-packages
-
-### Bower registration
-
-nano bower.json
-
-https://bower.io/docs/creating-packages/
-
-bower register servicejs https://github.com/Krabi/servicejs.git
 
 ### Release current project
 
