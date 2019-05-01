@@ -21,9 +21,8 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 
-    https://github.com/Krabi/servicejs
- 
- */
+    https://github.com/setmy-info/servicejs
+*/
 "use strict";
 
 (function (global) {
