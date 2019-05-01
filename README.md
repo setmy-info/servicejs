@@ -90,10 +90,6 @@ https://docs.npmjs.com/getting-started/publishing-npm-packages
 
     release.sh
 
-### Github site
-
-https://krabi.github.io/servicejs/
-
 ### NPM stie
 
 https://www.npmjs.com/package/servicejs
