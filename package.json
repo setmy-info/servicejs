@@ -7,7 +7,8 @@
     "main": "index.js",
     "scripts": {
         "start": "node ./src/test/js/backend/bin/www",
-        "unit": "echo \"Error: no test specified\" && exit 1",
+        "unit": "karma start karma.conf.js --single-run",
+        "tdd": "karma start karma.conf.js",
         "test": "node ./src/main/webapp/node/index.js",
         "build": "node ./build.js",
         "program": "echo \"Error: no program specified\" && exit 1"
