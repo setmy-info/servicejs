@@ -3,13 +3,15 @@ module.exports = function (config) {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            'src/test/js/**/*Spec.js'
+            'src/test/js/**/*Spec.js',
+            'src/main/webapp/js/servicejs.js'
         ],
         exclude: [
         ],
         preprocessors: {
+            'src/main/webapp/js/servicejs.js': ['coverage']
         },
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage', 'junit'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
@@ -24,6 +26,17 @@ module.exports = function (config) {
             }
         },
         singleRun: false,
-        concurrency: Infinity
+        concurrency: Infinity,
+        coverageReporter: {
+            type: 'html',
+            dir: 'target/coverage/'
+        },
+        junitReporter: {
+            outputDir: './target',
+            suite: '',
+            useBrowserName: true,
+            properties: {},
+            xmlVersion: null
+        }
     });
 };
