@@ -3,6 +3,9 @@
 
 This is independent (from other frameworks like: Angular, VueJS, React, etc) and simplest as possible dependencies injection for writing services layer for front end web based projects.
 
+0. Donate
+    https://www.paypal.me/imretabur
+
 1. Build should build two files:
     a) servicesjs.js (not minified)
     b) servicesjs.min.js (minified)
