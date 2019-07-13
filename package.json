@@ -1,7 +1,7 @@
 {
     "name": "servicejs",
     "description": "JavaScript dependencies injection based services layer.",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "license": "MIT",
     "author": "Imre Tabur <imre.tabur@eesti.ee>",
     "main": "index.js",
@@ -30,15 +30,7 @@
     "homepage": "https://github.com/setmy-info/servicejs#readme",
     "dependencies": {
         "lodash": "4.17.11",
-        "cookie-parser": "~1.4.4",
-        "body-parser": "^1.18.3",
-        "debug": "~2.6.9",
-        "express": "~4.16.4",
-        "http-errors": "~1.7.2",
-        "jsonwebtoken": "^8.5.1",
-        "morgan": "~1.9.1",
-        "pug": "^2.0.3",
-        "serve-favicon": "~2.5.0"
+        "js-api-extend": "1.1.0"
     },
     "devDependencies": {
         "jasmine": "^3.4.0",
@@ -51,7 +43,16 @@
         "karma-junit-reporter": "^1.2.0",
         "uglify-js": "^3.5.8",
         "webpack": "^4.30.0",
-        "webpack-cli": "^3.3.1"
+        "webpack-cli": "^3.3.1",
+        "cookie-parser": "~1.4.4",
+        "body-parser": "^1.18.3",
+        "debug": "~2.6.9",
+        "express": "~4.16.4",
+        "http-errors": "~1.7.2",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "~1.9.1",
+        "pug": "^2.0.3",
+        "serve-favicon": "~2.5.0"
     },
     "engines": {
         "node": ">= 10.15.3",

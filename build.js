@@ -3,8 +3,8 @@ var uglify = require("uglify-js");
 
 var sourceFileName = "servicejs.js";
 var minifiedFileName = "servicejs.min.js";
-var sourcePath = "./src/main/js/" + sourceFileName;
-var minifiedPath = "./src/test/webapp/js/" + minifiedFileName;
+var sourcePath = "./src/main/webapp/js/" + sourceFileName;
+var minifiedPath = "./src/main/webapp/js/" + minifiedFileName;
 
 var code = {
     sourceFileName: fs.readFileSync(sourcePath, "utf8")
