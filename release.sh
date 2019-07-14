@@ -1,12 +1,13 @@
 #!/bin/sh
 
 # MIT License
-# Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
+# Copyright (c) 2017-2019 Imre Tabur <imre.tabur@eesti.ee>
 
-RELEASE=1.0.25
+RELEASE=1.1.8-SNAPSHOT
 VERSION_TAG=version-${RELEASE}
 
-git add pom.xml package.json release.sh
+npm install && npm run build && npm run test
+git add ./dist package.json package-lock.json release.sh
 git commit -m "${VERSION_TAG}"
 git push
 git checkout master

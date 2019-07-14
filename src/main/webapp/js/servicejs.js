@@ -1,32 +1,15 @@
-/*
- MIT License
- 
- Copyright (c) 2017 Imre Tabur <imre.tabur@eesti.ee>
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- 
- https://github.com/Krabi/servicejs
- 
+/*!
+ * MIT License
+ *
+ * Copyright (c) 2017-2019 Imre Tabur <imre.tabur@eesti.ee>
  */
 "use strict";
 
-var jsdi = (function (jsdi) {
+(function (global) {
+
+    var jsdi = global.jsdi = global.jsdi || {};
+
+    var isInitialized = false;
 
     jsdi.services = {
     };
@@ -41,7 +24,7 @@ var jsdi = (function (jsdi) {
         jsdi.services[serviceName] = instance;
     };
 
-    jsdi.initServices = function () {//TODO : find some better solution, if any.
+    jsdi.initServices = function () {
         jsdi.resolveDependencies();
         var serviceObject, serviceObjectPropertyName;
         for (serviceObjectPropertyName in jsdi.services) {
@@ -50,6 +33,7 @@ var jsdi = (function (jsdi) {
                 serviceObject.init();
             }
         }
+        isInitialized = true;
     };
 
     jsdi.resolveDependencies = function () {
@@ -85,5 +69,19 @@ var jsdi = (function (jsdi) {
         return JSON.parse(JSON.stringify(obj));
     };
 
-    return jsdi;
-}(typeof exports === 'undefined' ? {} : exports));
+    var getReplacement = function (serviceName) {
+        if (serviceName) {
+            return this.services[serviceName];
+        }
+        return this.services;
+    };
+
+    jsdi.get = function (serviceName) {
+        if (!isInitialized) {
+            this.initServices();
+        }
+        jsdi.get = getReplacement;
+        return jsdi.get(serviceName);
+    };
+
+})(typeof window === 'undefined' ? global : window);

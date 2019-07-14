@@ -1,13 +1,15 @@
+"use strict";
+
 jsdi.service("logicService", function () {
 
     /**
      * This like code is usually in controllers.
      *
-     * jsdi.services.logicService.getPerson();
+     * jsdi.get().logicService.getPerson();
      *
-     * jsdi.services.personsService;
+     * jsdi.get().personsService;
      *
-     * jsdi.services.personsService.person
+     * jsdi.get().personsService.person
      *
      * 1. JS console.
      * 2. JS debug.

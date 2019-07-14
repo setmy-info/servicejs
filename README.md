@@ -1,6 +1,35 @@
+
 ## ServiceJS
 
 This is independent (from other frameworks like: Angular, VueJS, React, etc) and simplest as possible dependencies injection for writing services layer for front end web based projects.
+
+
+1. Build should build two files:
+    a) servicesjs.js (not minified)
+    b) servicesjs.min.js (minified)
+
+2. And that one file should be usable in:
+    a) web application, old way: <script src="servicesjs.js"></script>
+        to hold development without dependencies - only editor and browser are needed to start development
+    b) node applications adding as module
+        to make development same way as in old browsers
+    c) webpack, if possible.
+
+3. serviceB injections should work as:
+    var serviceA = {
+        serviceB: null
+    };
+
+    or
+
+    var serviceA = {
+        inject: ['serviceB']
+    };
+
+4. Services should be usable without changes in browser and in node - hold similarity.
+   No need to do context switching in mind and learn something else, when making development in web or node.
+
+5. Base common services are going to another library: servedjs
 
 ### Why?
 
@@ -28,78 +57,57 @@ or
 
 npm start
 
-or
-
-mvn jetty:run
-
-http://localhost:3000/
-
-### Unit testing
-
-npm run unit
-
 ### Run example program
 
-npm run program
+npm run test
 
 ### Usage
 
-    Take a look:
+    Import into html as:
     <script src="js/servicejs.min.js"></script>
     <script src="js/serviceA.js"></script>
     <script src="js/serviceB.js"></script>
     <script src="js/serviceC.js"></script>
-    <script src="js/finalize.js"></script>
 
 ### Example code
 
-src/main/webapp/js/serviceA.js
-src/main/webapp/js/serviceB.js
-src/main/webapp/js/serviceC.js
-src/main/webapp/js/finalize.js
+src/frontend/public/js/serviceA.js
+src/frontend/public/js/serviceB.js
+src/frontend/public/js/serviceC.js
+
+src/frontend/public/js/example/logicService.js
+src/frontend/public/js/example/personsService.js
+src/frontend/public/js/example/queryService.js
+src/frontend/public/js/example/rolesService.js
+
+src/frontend/public/node/index.js
+src/frontend/public/node/main.js
 
 ### Publishing npm
 
 https://docs.npmjs.com/getting-started/publishing-npm-packages
 
-### Bower registration
-
-nano bower.json
-
-https://bower.io/docs/creating-packages/
-
-bower register servicejs https://github.com/Krabi/servicejs.git
-
 ### Release current project
 
-Simply:
-
     release.sh
-or
-
-git checkout develop
-
-Remove -SNAPSHOT from pom.xml, package.json and release.sh and commit change
-
-git add pom.xml package.json release.sh
-
-git commit -m 'version-X.Y.Z'
-
-git push
-
-git checkout master
-
-git merge develop
-
-git tag -a version-X.Y.Z -m "version-X.Y.Z" && git push origin version-X.Y.Z && git push && npm publish
-
-### Github site
-
-https://krabi.github.io/servicejs/
 
 ### NPM stie
 
 https://www.npmjs.com/package/servicejs
+
+### Donate
+
+* [Set your favorite donation](https://www.paypal.me/imretabur "Donate any amount")
+* [1 EUR](https://www.paypal.me/imretabur/1 "Donate 1 EUR")
+* [5 EUR](https://www.paypal.me/imretabur/5 "Donate 5 EUR")
+* [10 EUR](https://www.paypal.me/imretabur/10 "Donate 10 EUR")
+* [15 EUR](https://www.paypal.me/imretabur/15 "Donate 15 EUR")
+* [20 EUR](https://www.paypal.me/imretabur/20 "Donate 20 EUR")
+* [30 EUR](https://www.paypal.me/imretabur/30 "Donate 30 EUR")
+* [50 EUR](https://www.paypal.me/imretabur/50 "Donate 50 EUR")
+* [75 EUR](https://www.paypal.me/imretabur/75 "Donate 75 EUR")
+* [100 EUR](https://www.paypal.me/imretabur/100 "Donate 100 EUR")
+* [200 EUR](https://www.paypal.me/imretabur/200 "Donate 200 EUR")
 
 ### License
 
