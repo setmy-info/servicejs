@@ -14,11 +14,11 @@ const distFilePath = distPath + sourceFileName;
 const distMinifiedFilePath = distPath + minifiedFileName;
 const distIndexFilePath = distPath + indexFileName;
 
-let code = {
+const code = {
     "servicejs.js": fs.readFileSync(sourcePath, "utf8")
 };
 
-let options = {
+const options = {
     output: {
         comments: /^!/
     }
