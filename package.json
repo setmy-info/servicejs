@@ -1,7 +1,7 @@
 {
     "name": "servicejs",
     "description": "JavaScript dependencies injection based services layer.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "license": "MIT",
     "author": "Imre Tabur <imre.tabur@eesti.ee>",
     "main": "dist/index.js",
