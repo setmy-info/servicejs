@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # MIT License
-# Copyright (c) 2017-2021 Imre Tabur <imre.tabur@mail.ee>
+# Copyright (c) 2017-2026 Imre Tabur <imre.tabur@mail.ee>
 
 NAME=servicejs
 RELEASE=`node ./src/build/version.js`
@@ -18,8 +18,9 @@ git commit -m "${VERSION_TAG}"
 git push
 git checkout master
 git merge develop
-git tag -a ${VERSION_TAG} -m "${VERSION_TAG}"
-git push origin ${VERSION_TAG}
+smi-new-tag "${VERSION_TAG}"
+#git tag -a ${VERSION_TAG} -m "${VERSION_TAG}"
+#git push origin ${VERSION_TAG}
 git push
 npm publish
 
